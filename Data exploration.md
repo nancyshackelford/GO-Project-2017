@@ -67,4 +67,4 @@ ggplot(data) +
   theme(legend.position = "none")
 ```
 
-![alt text](https://github.com/nancyshackelford/GO-Project-2017/blob/master/Images/AreaLostHist.tiff "Histogram of area lost in each patch (2006-2017)")
+![alt text](~/Images/AreaLostHist.tiff "Histogram of area lost in each patch (2006-2017)")
