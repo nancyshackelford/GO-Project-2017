@@ -1,12 +1,12 @@
 # Garry oak meadow data exploration
 
-## Conservation Science and Practice, in revision
+## *Conservation Science and Practice, in revision*
 
 NAS 09-05-2019
 
 ### Script description --
 
-Create exploratory plots of response variables and predictors of interest in Garry oak meadow management research. Data was collected in the spring and summer of both 2007 and 2017, by Dr. Joseph Bennett (2007) and by Dr. Nancy Shackelford (2017) on Saanich Penninsula  in British Columbia. See readme (currently in prep) and publication (currently in revision) for further details.
+Create exploratory plots of response variables and predictors of interest in Garry oak meadow management research. Data was collected in the spring and summer of both 2007 and 2017, by Dr. Joseph Bennett (2007) and by Dr. Nancy Shackelford (2017) on Saanich Penninsula  in British Columbia. See repository README (currently in prep) and publication (currently in revision) for further details.
 
 ```
 ### Load packages
@@ -67,4 +67,4 @@ ggplot(data) +
   theme(legend.position = "none")
 ```
 
-![alt text](https://github.com/nancyshackelford/GO-Project-2017/blob/master/Images/AreaLostHist.tiff "Histogram of area lost in each patch (2006-2017")
+![alt text](https://github.com/nancyshackelford/GO-Project-2017/blob/master/Images/AreaLostHist.tiff)
