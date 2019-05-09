@@ -67,4 +67,4 @@ ggplot(data) +
   theme(legend.position = "none")
 ```
 
-![](https://github.com/nancyshackelford/GO-Project-2017/blob/master/Images/AreaLostHist.tiff)
+![](https://github.com/nancyshackelford/GO-Project-2017/blob/master/Images/AreaLostHist.tiff?raw=true)
