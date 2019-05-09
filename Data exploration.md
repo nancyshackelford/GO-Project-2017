@@ -66,3 +66,5 @@ ggplot(data) +
         panel.background = element_blank()) +
   theme(legend.position = "none")
 ```
+
+![Area lost histogram](/Images/AreaLostHist.pdf "Histogram of area lost per patch (2006-2017)")
