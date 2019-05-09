@@ -67,4 +67,4 @@ ggplot(data) +
   theme(legend.position = "none")
 ```
 
-![](~/Images/AreaLostHist.tiff?raw=true "Histogram of area lost in each patch (2006-2017)")
+![](Images/AreaLostHist.tiff?raw=true "Histogram of area lost in each patch (2006-2017)")
