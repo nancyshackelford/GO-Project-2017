@@ -67,4 +67,4 @@ ggplot(data) +
   theme(legend.position = "none")
 ```
 
-![Area lost histogram](https://github.com/nancyshackelford/GO-Project-2017/blob/master/Images/AreaLostHist.pdf)
+![Area lost histogram](/Images/AreaLostHist.pdf)
