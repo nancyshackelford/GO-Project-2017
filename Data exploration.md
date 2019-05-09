@@ -67,4 +67,4 @@ ggplot(data) +
   theme(legend.position = "none")
 ```
 
-![Area lost](/Images/AreaLostHist.tiff)
+![Area lost](/Images/AreaLostHist.tiff?raw=true)
