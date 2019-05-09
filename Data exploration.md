@@ -66,5 +66,3 @@ ggplot(data) +
         panel.background = element_blank()) +
   theme(legend.position = "none")
 ```
-
-![Area lost](AreaLostHist.tiff)
