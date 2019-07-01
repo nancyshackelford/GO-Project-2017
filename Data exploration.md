@@ -1,15 +1,15 @@
 # Garry oak meadow data exploration
 
-## *Conservation Science and Practice, in revision*
+## *Conservation Science and Practice,* in press
 
-NAS 09-05-2019
+NAS 01-07-2019
 
 ### Script description --
 
 Create exploratory plots of response variables and predictors of interest in Garry oak meadow management research. Data was collected in the spring and summer of both 2007 and 2017, by Dr. Joseph Bennett (2007) and by Dr. Nancy Shackelford (2017) on Saanich Penninsula  in British Columbia. See repository README (currently in prep) and publication (currently in revision) for further details.
 
+### Load packages and prepare data
 ```
-### Load packages
 library(tidyverse)
 library(gridExtra)
 library(extrafont)
@@ -37,9 +37,9 @@ data_s <- data_s %>%
          RdS = (RdDens.1KM - mean(RdDens.1KM)) / sd(RdDens.1KM)) # Drop empty functional groups and standardize predictors
 ```
 
+### Area lost plot exploration (uses site data)
+##### Histogram of proportion lost
 ```
-#### Area lost plots
-### Histogram
 data$myfill <- data$AreaC
 data$myfill[data$myfill > 0.25 & data$myfill <= 0.3] <- 7
 data$myfill[data$myfill > 0.2 & data$myfill <= 0.25] <- 6
@@ -69,9 +69,9 @@ ggplot(data) +
 
 ![](Images/AreaLostHist.png)
 
+#### Plotting area change against predictors
+##### 2007 patch area
 ```
-### By predictors
-# 2007 area
 ggplot(data) +
   geom_smooth(aes(y = AreaC, x = Area_07),
               method = 'lm',
@@ -96,8 +96,8 @@ ggplot(data) +
 
 ![](Images/Area_area.png)
 
+##### Road density (standardized value)
 ```
-# Roads (standardized value)
 ggplot(data) +
   geom_smooth(aes(y = AreaC, x = RdS),
               method = 'lm',
@@ -122,8 +122,8 @@ ggplot(data) +
 
 ![](Images/Area_roads.png)
 
+##### Connectivity (standardized value)
 ```
-# Connectivity (standardized value)
 ggplot(data) +
   geom_smooth(aes(y = AreaC, x = ConnS),
               method = 'lm',
@@ -148,8 +148,8 @@ ggplot(data) +
 
 ![](Images/Area_conn.png)
 
+##### Management intensity (ordinal)
 ```
-# Management intensity (ordinal)
 ggplot(data) +
   geom_smooth(aes(y = AreaC, x = Inv_C),
               method = 'lm',
@@ -176,9 +176,9 @@ ggplot(data) +
 
 ![](Images/Area_inv.png)
 
+#### Species richness exploration (uses site data)
+##### Histogram of 2017 total
 ```
-#### Species richness plots
-### Histogram of 2017 total
 ggplot(data) +
   geom_bar(aes(x = Site, y = Rich_17), fill = "red4",
            stat = "identity") +
@@ -200,9 +200,9 @@ ggplot(data) +
 
 ![](Images/2017 richness.png)
 
+#### Plotting richness change against predictors
+###### Changes in patch area
 ```
-### Changes by predictors
-# Area lost
 p1 <- ggplot(data) +
   geom_smooth(aes(y = RichC, x = AreaC),
               method = 'lm',
@@ -274,8 +274,8 @@ grid.arrange(p1, p2, p3, ncol = 3)
 
 ![](Images/Rich_areac.png)
 
+##### Road density (standardized value)
 ```
-# Roads (standardized value)
 p1 <- ggplot(data) +
   geom_smooth(aes(y = RichC, x = RdS),
               method = 'lm',
@@ -347,8 +347,8 @@ grid.arrange(p1, p2, p3, ncol = 3)
 
 ![](Images/Rich_rds.png)
 
+##### Connectivity (standardized value)
 ```
-# Connectivity (standardized value)
 p1 <- ggplot(data) +
   geom_smooth(aes(y = RichC, x = ConnS),
               method = 'lm',
@@ -420,8 +420,8 @@ grid.arrange(p1, p2, p3, ncol = 3)
 
 ![](Images/Rich_conn.png)
 
+##### Management intensity (ordinal)
 ```
-# Management intensity (ordinal)
 p1 <- ggplot(data) +
   geom_smooth(aes(y = RichC, x = Inv_C),
               method = 'lm',
@@ -499,9 +499,9 @@ grid.arrange(p1, p2, p3, ncol = 3)
 
 ![](Images/Rich_inv.png)
 
+#### Turnover exploration (uses site data)
+##### Histogram of total turnover
 ```
-#### Turnover plots
-### Histogram
 ggplot(data) +
   geom_histogram(aes(x = Turnover),
                  binwidth = 0.03) +
@@ -522,10 +522,9 @@ ggplot(data) +
 ```
 
 ![](Images/Turnover.png)
-
+#### Plotting turnover against predictors
+###### Changes in patch area
 ```
-### Changes by predictors
-# Area lost
 ggplot(data) +
   geom_smooth(aes(y = Turnover, x = AreaC),
               method = 'lm',
@@ -551,8 +550,8 @@ ggplot(data) +
 
 ![](Images/Turnover_areac.png)
 
+##### Road density (standardized value)
 ```
-# Roads (standardized value)
 ggplot(data) +
   geom_smooth(aes(y = Turnover, x = RdS),
               method = 'lm',
@@ -578,8 +577,8 @@ ggplot(data) +
 
 ![](Images/Turnover_rds.png)
 
+##### Connectivity (standardized value)
 ```
-# Connectivity (standardized value)
 ggplot(data) +
   geom_smooth(aes(y = Turnover, x = ConnS),
               method = 'lm',
@@ -605,8 +604,8 @@ ggplot(data) +
 
 ![](Images/Turnover_conn.png)
 
+##### Management intensity (ordinal)
 ```
-# Management intensity (ordinal)
 ggplot(data) +
   geom_smooth(aes(y = Turnover, x = Inv_C),
               method = 'lm',
@@ -634,9 +633,9 @@ ggplot(data) +
 
 ![](Images/Turnover_inv.png)
 
+#### Response diversity exploration (uses site data)
+##### 2017 response diversity
 ```
-#### Response diversity plots
-### Histogram
 ggplot(data) +
   geom_histogram(aes(x = RD_17),
                  binwidth = 0.0025) +
@@ -658,9 +657,9 @@ ggplot(data) +
 
 ![](Images/RD.png)
 
+#### Plotting turnover against predictors
+###### Changes in patch area
 ```
-### Changes by predictors
-# Area lost
 ggplot(data) +
   geom_smooth(aes(y = RDC, x = AreaC),
               method = 'lm',
@@ -686,8 +685,8 @@ ggplot(data) +
 
 ![](Images/RD_areac.png)
 
+##### Road density (standardized value)
 ```
-# Roads (standardized value)
 ggplot(data) +
   geom_smooth(aes(y = RDC, x = RdS),
               method = 'lm',
@@ -713,8 +712,8 @@ ggplot(data) +
 
 ![](Images/RD_rds.png)
 
+##### Connectivity (standardized value)
 ```
-# Connectivity (standardized value)
 ggplot(data) +
   geom_smooth(aes(y = RDC, x = ConnS),
               method = 'lm',
@@ -740,8 +739,8 @@ ggplot(data) +
 
 ![](Images/RD_conn.png)
 
+##### Management intensity (ordinal)
 ```
-# Management intensity (ordinal)
 ggplot(data) +
   geom_smooth(aes(y = RDC, x = Inv_C),
               method = 'lm',
@@ -769,8 +768,8 @@ ggplot(data) +
 
 ![](Images/RD_inv.png)
 
+#### Functional redundancy exploration (uses group-level data)
 ```
-#### Functional redundancy plots
 grp_names <- c("Large, slow trees",
                "Early blooming, woody,\nphanerophytes",
                "Early blooming, defensive\nhemicryptophyte herbs, mid to low\npalatability",
@@ -800,8 +799,10 @@ grp_names <- c("Large, slow trees",
 grp_labeller <- function(variable,value) {
   return(grp_names[value])
 }
+```
 
-### Histogram of 2017 total
+##### 2017 functional redundancy by site
+```
 ggplot(data_s) +
   geom_histogram(aes(x = FR.17, fill = Grp),
                  binwidth = 1) +
@@ -827,9 +828,9 @@ ggplot(data_s) +
 
 ![](Images/FR.png)
 
+#### Plotting turnover against predictors
+###### Changes in patch area
 ```
-### Changes by predictors
-# Area lost
 ggplot(data_s) +
   geom_smooth(aes(y = FRC, x = Area.Change),
               method = 'lm',
@@ -857,8 +858,8 @@ ggplot(data_s) +
 
 ![](Images/FR_areac.png)
 
+##### Road density (standardized value)
 ```
-# Roads (standardized value)
 ggplot(data_s) +
   geom_smooth(aes(y = FRC, x = RdS),
               method = 'lm',
@@ -886,8 +887,8 @@ ggplot(data_s) +
 
 ![](Images/FR_rds.png)
 
+##### Connectivity (standardized value)
 ```
-# Connectivity (standardized value)
 ggplot(data_s) +
   geom_smooth(aes(y = FRC, x = ConnS),
               method = 'lm',
@@ -915,8 +916,8 @@ ggplot(data_s) +
 
 ![](Images/FR_conn.png)
 
+##### Management intensity (ordinal)
 ```
-# Management intensity (ordinal)
 ggplot(data_s) +
   geom_smooth(aes(y = FRC, x = Invasive),
               method = 'lm',
