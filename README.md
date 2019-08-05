@@ -32,8 +32,8 @@ All data is provided as comma separated files with accompanying meta-data descri
 | :---: | :---: | :--- | :--- |
 | <b>Trait_data</b> | Sean M. Murray; Nancy Shackelford | multiple online sources (see publication for details) | all response and effect traits for species identified in all patches in 2007 and 2017 surveys |
 | <b>Raw_site_data</b> | Patrick L. Lilley; Nancy Shackelford | field surveys | presence-absence data for all patches in 2007 and 2017 surveys |
-| <b>Site_data</b> | Patrick L. Lilley; Nancy Shackelford; Sean M. Murray | site-level predictor and response data compiled from raw site data, trait data, and processing code | compiled dataset. |
-| <b>Quadrat_data</b> | Joseph R. Bennett; Sean M. Murray | field surveys | cover data for quadrat survey for all patches in 2009 and 2017. Quadrat number within each site depended on area of patch. Full data is unpublished; 2009 data is published in Bennett et al., 2013<sup>*</sup>. |
-| <b>Group_data</b> | Patrick L. Lilley; Nancy Shackelford; Sean M. Murray | group-level predictor and response data compiled from raw site data, trait data, and processing code | compiled dataset. |
+| <b>Site_data</b> | Patrick L. Lilley; Nancy Shackelford; Sean M. Murray | site-level predictor and response data compiled from raw site data, trait data, and processing code | compiled dataset |
+| <b>Quadrat_data</b> | Joseph R. Bennett; Sean M. Murray | field surveys | cover data for quadrat survey for all patches in 2009 and 2017. Quadrat number within each site depended on area of patch. Full data is unpublished; 2009 data is published in Bennett et al., 2013<sup>*</sup> |
+| <b>Group_data</b> | Patrick L. Lilley; Nancy Shackelford; Sean M. Murray | group-level predictor and response data compiled from raw site data, trait data, and processing code | compiled dataset |
 
 <sup>*</sup> Bennett, J. R., Vellend, M., Lilley, P. L., Cornwell, W. K., & Arcese, P. (2013). Abundance, rarity and invasion debt among exotic species in a patchy ecosystem. Biological Invasions, 15(3), 707-716.
