@@ -49,7 +49,7 @@ ac1 <- lm(AreaC ~ Inv_C * RdS + AreaS,
 summary(ac1)
 ```
 
-![](Images/Area_model.png)
+![](Images/Area_model.PNG)
 
 ```
 ## Plot
@@ -93,7 +93,7 @@ sp2 <- lm(NatC ~ Inv_C * RdS + ConnS + AreaS,
 summary(sp2)
 ```
 
-![](Images/Native_model.png)
+![](Images/Native_model.PNG)
 
 ```
 ### Turnover
@@ -101,7 +101,7 @@ t1 <- glm(Turnover ~ Inv_C * RdS + ConnS + AreaS, data = data, family = Gamma)
 summary(t1)
 ```
 
-![](Images/Turnover_model.png)
+![](Images/Turnover_model.PNG)
 
 ```
 ### Response diversity
@@ -109,7 +109,7 @@ rd1 <- lm(RDC ~ Inv_C * RdS + ConnS + AreaS, data = data)
 summary(rd1)
 ```
 
-![](Images/RD_model.png)
+![](Images/RD_model.PNG)
 
 ```
 ### Functional redundancy
@@ -197,4 +197,4 @@ ggplot(data = new_d) +
   theme(legend.position = "none")
 ```
 
-![](Images/FR_conn_mplot.png)
+![](Images/Fr_conn_mplot.png)
