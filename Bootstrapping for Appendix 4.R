@@ -35,10 +35,9 @@ fr1 <- lme(FRC ~ Invasive * RdS + ConnS + Area.Change + Grp,
            random = ~1|Site, data = data_s)
 
 #### Simulate changes in functional redundancy based on random species additions and losses
-### Reorganize group-level data to slot into species model structure
+### Simplify group-level data to slot into species model structure
 simul_set <- data_s %>%
-  select(Site, Grp, FR.07, Invasive, RdS, ConnS, Area.Change) %>%
-  mutate(Site = fct_recode(Site, "SEYMOUR-S" = "SEYMOUR"))
+  select(Site, Grp, FR.07, Invasive, RdS, ConnS, Area.Change)
 
 ### Calculate changes in species richness per site
 n_change <- data %>%

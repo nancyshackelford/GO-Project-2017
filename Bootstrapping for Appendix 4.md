@@ -7,12 +7,12 @@ NAS 04-08-2019
 ### Script description --
 
 Given that the change in functional redundancy (FR) is calculated as the change in species richness within functional groups, we investigated the difference between true changes in FR, as reflected in group-specific species richness changes, and the random addition and subtraction of species with functional groups ignored. To do so, this code is a series of simulations to examine the effect of gains or losses in species richness, using species randomly drawn from the available pool. (i.e., ‘null’ model) and compared it with our real data results. The following steps were taken:
->>1.  The number of species gained or lost per site was extracted from the dataset
->>2.  For species additions, this number was then used to randomly select from the regional species pool to “recruit” to the site in the second time point
->>3.  For species losses, the number was then used to randomly select from the site species pool to “lose” in the second time point
->>4.  Change in FR within groups based on this random process was calculated
->>5.  Change in FR was modeled against all predictors included in original model
->>6.  Coefficients and p-values for all predictors were extracted
+>1.  The number of species gained or lost per site was extracted from the dataset
+>2.  For species additions, this number was then used to randomly select from the regional species pool to “recruit” to the site in the second time point
+>3.  For species losses, the number was then used to randomly select from the site species pool to “lose” in the second time point
+>4.  Change in FR within groups based on this random process was calculated
+>5.  Change in FR was modeled against all predictors included in original model
+>6.  Coefficients and p-values for all predictors were extracted
 This process was repeated 1,000 times, and the distribution of the coefficients and p-values in the randomly generated FR changes were compared to real data outputs 
 
 ### Load packages and prepare data
@@ -58,10 +58,9 @@ fr1 <- lme(FRC ~ Invasive * RdS + ConnS + Area.Change + Grp,
 
 #### Simulate changes in functional redundancy based on random species additions and losses
 ```
-### Reorganize group-level data to slot into species model structure
+### Simplify group-level data to slot into species model structure
 simul_set <- data_s %>%
-  select(Site, Grp, FR.07, Invasive, RdS, ConnS, Area.Change) %>%
-  mutate(Site = fct_recode(Site, "SEYMOUR-S" = "SEYMOUR"))
+  select(Site, Grp, FR.07, Invasive, RdS, ConnS, Area.Change)
 
 ### Calculate changes in species richness per site
 n_change <- data %>%
@@ -289,6 +288,7 @@ grid.arrange(p1, p2,
              p7, p8,
              ncol = 2)
 ```
+![](Images/A4_predictors.png)
 
 #### Create plots of results for each functional group
 ```
@@ -358,7 +358,10 @@ grid.arrange(p1, p2, p3, p4,
              p17, p18, p19, p20,
              p21, p22, p23, p24,
              ncol = 4)
+```
+![](Images/A4_group_coefficients.png)
 
+```
 for(i in 5:(ncol(sim_p) - 1)) {
   for_plot <- data.frame(Plot = sim_p[ , i])
   
@@ -391,3 +394,4 @@ grid.arrange(p1, p2, p3, p4,
              p21, p22, p23, p24,
              ncol = 4)
 ```
+![](Images/A4_group_ps.png)
