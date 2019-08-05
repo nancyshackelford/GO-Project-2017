@@ -13,7 +13,7 @@ effectsT <- c("Invasive", "Growth.F", "Life.Hist", "Raunkiaer",
               "Leaf.Size", "Height", "Growth.Season", "Growth.Length", 
               "Evergreen", "Nfix", "Palat", "Defence", "G.Rate")
 responseT <- c("Palat", "Defence", "G.Rate", "Hermaphrodite", 
-               "Clonal", "Prop.Long", "Wind", "Insect", "Animal", 
+               "Clonal", "Wind", "Insect", "Animal", 
                "Self", "Wind.1", "Water", "Animal.1", "Explosive", 
                "None", "Precip.Env", "Drought", "Shade", "Root.D", "Seed.W")
 
