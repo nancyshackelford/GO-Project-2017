@@ -359,6 +359,7 @@ grid.arrange(p1, p2, p3, p4,
              p21, p22, p23, p24,
              ncol = 4)
 ```
+
 ![](Images/A4_group_coefficients.png)
 
 ```
@@ -394,4 +395,5 @@ grid.arrange(p1, p2, p3, p4,
              p21, p22, p23, p24,
              ncol = 4)
 ```
+
 ![](Images/A4_group_ps.png)
