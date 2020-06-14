@@ -1,6 +1,6 @@
 # Ten years of pulling: Ecosystem recovery after long-term weed management in Garry oak savanna
 
-## *Conservation Science and Practice,* in press
+## *Conservation Science and Practice,* 2019.
 
 NAS 05-08-2019
 
